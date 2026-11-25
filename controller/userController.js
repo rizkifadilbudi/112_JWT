@@ -14,14 +14,14 @@ async function register(req, res) {
     }
     const hashesPassword = await bcrypt.hash(password, 10);
     
-    const user = await user.create({
+    const user = await User.create({
         email, 
         password: hashesPassword,
     });
     res.status(200).json({
         message: "Registrasi berhasil",
         data: {
-            is: user.id,
+            id: user.id,
             email: user.email
         }
     });
