@@ -5,10 +5,10 @@ async function getAllKomik(req, res) {
     const komik = await db.Komik.findAll();
     res.status(200).json(komik);
   } catch (err) {
-    console.error('Error fetching komik:', err.message);
+    console.error('Error fetching komik:', err.message);z
     res.status(500).json({ error: 'Failed to fetch komik' });
   }
-}
+}   
 
 async function getKomikById(req, res) {
   const { id } = req.params;
